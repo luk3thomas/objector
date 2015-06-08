@@ -1,0 +1,28 @@
+{
+  "name": "objector",
+  "version": "1.0.0",
+  "description": "A JavaScript library for getting and setting properties on objects",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test",
+    "compile": "./node_modules/.bin/webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luk3thomas/objector"
+  },
+  "author": "Luke Thomas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luk3thomas/objector/issues"
+  },
+  "homepage": "https://github.com/luk3thomas/objector",
+  "dependencies": {
+    "delvec": "0.0.50",
+    "light-curry": "0.0.2"
+  },
+  "devDependencies": {
+    "node-libs-browser": "^0.5.2",
+    "webpack": "^1.9.10"
+  }
+}
