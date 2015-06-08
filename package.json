@@ -4,8 +4,11 @@
   "description": "A JavaScript library for getting and setting properties on objects",
   "main": "index.js",
   "scripts": {
-    "test": "npm test",
-    "compile": "./node_modules/.bin/webpack"
+    "test": "NODE_PATH=./src ./node_modules/.bin/jasmine-node --coffee test/",
+    "testw": "NODE_PATH=./src ./node_modules/.bin/jasmine-node --color --autotest --coffee test/ --watch src",
+    "prepublish": "npm run compile",
+    "compile": "./node_modules/.bin/webpack",
+    "start": "./node_modules/.bin/webpack -w"
   },
   "repository": {
     "type": "git",
@@ -22,6 +25,8 @@
     "light-curry": "0.0.2"
   },
   "devDependencies": {
+    "coffee-script": "^1.9.3",
+    "jasmine-node": "^1.14.5",
     "node-libs-browser": "^0.5.2",
     "webpack": "^1.9.10"
   }
