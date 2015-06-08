@@ -9,6 +9,7 @@ describe "Wheeljack", ->
           qux: 2
     @wheeljack = new @Wheeljack(@object)
 
+
   describe "#get", ->
 
     it "can get a value", ->
@@ -36,3 +37,10 @@ describe "Wheeljack", ->
 
       @wheeljack.set('does.not.exist', 99)
       expect(@object.does.not.exist).toBe 99,  "Nested, does not exist"
+
+
+  describe "#swap", ->
+
+    it "can swap out the data object", ->
+      @wheeljack.swap(a: 1)
+      expect(@wheeljack.object).toEqual a: 1

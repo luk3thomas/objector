@@ -40,6 +40,10 @@ Wheeljack.prototype = {
       }
       return this.set(keys.join('.'), value, object[key]);
     }
+  },
+
+  swap: function(object) {
+    this.object = object;
   }
 };
 
