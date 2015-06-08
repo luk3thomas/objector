@@ -1,9 +1,9 @@
 module.exports =
 {
-  entry: './src/objector.js',
+  entry: './src/wheeljack.js',
   output: {
     filename: 'index.js',
-    library: 'Objector',
+    library: 'Wheeljack',
     libraryTarget: 'umd'
   }
 }

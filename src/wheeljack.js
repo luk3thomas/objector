@@ -1,11 +1,11 @@
 var curry  = require('light-curry'),
     delvec = require('delvec');
 
-var Objector = function(object) {
+var Wheeljack = function(object) {
   this.object = object;
 };
 
-Objector.prototype = {
+Wheeljack.prototype = {
 
   get: function(key) {
     return delvec(this.object, key);
@@ -43,4 +43,4 @@ Objector.prototype = {
   }
 };
 
-module.exports = Objector;
+module.exports = Wheeljack;
