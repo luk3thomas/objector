@@ -7,20 +7,23 @@ var Objector = function(object) {
 
 Objector.prototype = {
 
-  get: curry(function(key) {
+  get: function(key) {
     return delvec(this.object, key);
-  }),
+  },
 
-  getOr: curry(function(alternate, key) {
-    return delvec.or(this.object, key, alternate);
-  }),
+  getOr: function() {
+    args = [].slice.call(arguments);
+    args.unshift(this.object);
 
-  set: curry(function(object, key, value) {
+    return curry(function(object, alternate, key) {
+      return delvec.or(alternate, key, object);
+    }).apply(this, args);
+  },
+
+  set: function(key, value, object) {
     var steps, key, keys;
 
     if (arguments.length === 2) {
-      value  = key;
-      key    = object;
       object = this.object;
     }
 
@@ -35,9 +38,9 @@ Objector.prototype = {
       if (typeof delvec(object, key) !== 'object') {
         object[key] = {};
       }
-      return this.set(keys.join('.'), object[key], value);
+      return this.set(keys.join('.'), value, object[key]);
     }
-  })
+  }
 };
 
 module.exports = Objector;
